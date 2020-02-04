@@ -10,5 +10,8 @@ class HomeController extends Controller
 
         return view('skelbimai.pages.home');
     }
+    public function showSkelbimai(){
 
+        return view('skelbimai.pages.skelbimai');
+    }
 }

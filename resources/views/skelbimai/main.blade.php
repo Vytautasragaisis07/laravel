@@ -34,6 +34,7 @@
 
 @include('skelbimai/_partials/header')
 @yield('content')
+@include('skelbimai/_partials/content')
 @include('skelbimai/_partials/newletter')
 @include('skelbimai/_partials/footer')
 
