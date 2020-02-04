@@ -2,6 +2,7 @@
 
 @section('content')
     <main>
-        <h2>pradinis puslapis</h2>
+        <h2>Profilis</h2>
+        <p>Jau greitai</p>
     </main>
 @stop
