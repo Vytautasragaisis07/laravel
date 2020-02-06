@@ -2,14 +2,14 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6">
-                <h2>Newsletter</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <h2>Naujienlaiškis</h2>
+                <p>Sekite mus ir gaukite įvairių nuolaidos kodų!</p>
             </div>
             <div class="col-md-6">
 
                 <form class="d-flex">
-                    <input type="text" class="form-control" placeholder="Email">
-                    <input type="submit" value="Subscribe" class="btn btn-white">
+                    <input type="text" class="form-control" placeholder="El paštas">
+                    <input type="submit" value="Prenumeruokite" class="btn btn-white">
                 </form>
             </div>
         </div>

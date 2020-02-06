@@ -14,8 +14,22 @@ class HomeController extends Controller
 
         return view('skelbimai.pages.skelbimai');
     }
-    public function ad(){
+    public function showApie(){
 
-        return view('skelbimai.pages.ad');
+        return view('skelbimai.pages.apie');
+    }
+    public function showKontaktai(){
+
+        return view('skelbimai.pages.kontaktai');
+    }
+    public function showPrisijungti(){
+        return view('skelbimai.pages.prisijungti');
+    }
+    public function showRegistruotis(){
+        return view('skelbimai.pages.registruotis');
+    }
+    public function showPrideti(){
+
+        return view('skelbimai.pages.prideti');
     }
 }
