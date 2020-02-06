@@ -1,3 +1,2 @@
 @extends('skelbimai/main')
-
-@yield('content')
+@extends('skelbimai/_partials/search')
