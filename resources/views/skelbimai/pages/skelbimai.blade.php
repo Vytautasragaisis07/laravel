@@ -1,2 +1,5 @@
 @extends('skelbimai/main')
-@extends('skelbimai/_partials/search')
+@section('content')
+    @include('skelbimai/_partials/ads')
+
+@stop

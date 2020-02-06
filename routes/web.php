@@ -13,4 +13,5 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('/skelbimai', 'HomeController@showSkelbimai');
+Route::get('/ad', 'HomeController@ad');
 

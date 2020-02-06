@@ -14,4 +14,8 @@ class HomeController extends Controller
 
         return view('skelbimai.pages.skelbimai');
     }
+    public function ad(){
+
+        return view('skelbimai.pages.ad');
+    }
 }
