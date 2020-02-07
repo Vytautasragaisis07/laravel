@@ -10,7 +10,7 @@ class adController extends Controller
 
         return view('skelbimai.pages.prideti');
     }
-    public function storeAd(){
+    public function storeAd(Request $request){
         $validateData = $request->validate([
            'title' => 'required'
         ]);
@@ -33,12 +33,12 @@ class adController extends Controller
             'catid' => request('catid')
         ]);
 
-        return redirect('/skelbimai');
+        return redirect('/prideti');
 
     }
     public function ValdytiSkelbima()
     {
         $ads = Ad::all();
-        return view('skelbimai.pages.valdytiskelbima', compact('ads'));
+        return view('skelbimai.pages.prideti', compact('Ad'));
     }
 }
