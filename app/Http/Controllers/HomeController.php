@@ -28,8 +28,5 @@ class HomeController extends Controller
     public function showRegistruotis(){
         return view('skelbimai.pages.registruotis');
     }
-    public function showPrideti(){
 
-        return view('skelbimai.pages.prideti');
-    }
 }

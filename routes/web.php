@@ -17,5 +17,8 @@ Route::get('/apie', 'HomeController@showApie');
 Route::get('/kontaktai', 'HomeController@showKontaktai');
 Route::get('/prisijungti', 'HomeController@showPrisijungti');
 Route::get('/registruotis', 'HomeController@showRegistruotis');
-Route::get('/prideti', 'HomeController@showPrideti');
-
+Route::get('/prideti', 'adController@showPrideti');
+Route::get('/kategorija', 'CategoryController@AddKategorija');
+Route::post('/store-category', 'CategoryController@StoreKategorija'); //Uzklausa
+Route::get('/valdyti-kategorija', 'CategoryController@ValdytiKategorija');
+Route::get('/trinti-kategorija/{category}', 'CategoryController@TrintiKategorija');
