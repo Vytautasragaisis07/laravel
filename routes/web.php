@@ -23,5 +23,4 @@ Route::post('/store-category', 'CategoryController@StoreKategorija'); //Uzklausa
 Route::get('/valdyti-kategorija', 'CategoryController@ValdytiKategorija');
 Route::get('/trinti-kategorija/{category}', 'CategoryController@TrintiKategorija');
 Route::post('/prideti', 'adController@storeAd'); //Uzklausa
-Route::get('/prideti', 'adController@storeAd');
 
