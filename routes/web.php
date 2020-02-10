@@ -17,10 +17,16 @@ Route::get('/apie', 'HomeController@showApie');
 Route::get('/kontaktai', 'HomeController@showKontaktai');
 Route::get('/prisijungti', 'HomeController@showPrisijungti');
 Route::get('/registruotis', 'HomeController@showRegistruotis');
-Route::get('/prideti', 'adController@showPrideti');
+Route::get('/skelbimas/{ad}', 'HomeController@showSkelbimas');
+
 Route::get('/kategorija', 'CategoryController@AddKategorija');
 Route::post('/store-category', 'CategoryController@StoreKategorija'); //Uzklausa
 Route::get('/valdyti-kategorija', 'CategoryController@ValdytiKategorija');
 Route::get('/trinti-kategorija/{category}', 'CategoryController@TrintiKategorija');
-Route::post('/prideti', 'adController@storeAd'); //Uzklausa
+
+Route::get('/prideti', 'AdController@AddSkelbima');
+Route::post('/store-ad', 'AdController@StoreAd'); //Uzklausa
+Route::get('/valdyti-skelbima', 'AdController@ValdytiSkelbima');
+Route::get('/trinti-skelbima/{ad}', 'AdController@TrintiSkelbima');
+
 

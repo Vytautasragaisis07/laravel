@@ -24,7 +24,7 @@ class CreateAdsTable extends Migration
             $table->string('phone')-> nullable();
             $table->string('location');
             $table->integer('catid');
-            $table->timestamps();
+            $table->timestamps('');
         });
     }
 

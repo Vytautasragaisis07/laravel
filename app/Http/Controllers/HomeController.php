@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+use App\Ad;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -10,9 +12,12 @@ class HomeController extends Controller
 
         return view('skelbimai.pages.home');
     }
-    public function showSkelbimai(){
-
-        return view('skelbimai.pages.skelbimai');
+    public function showSkelbimai()
+    {
+        $categories = Category::all();
+        $ads = Ad::select('ads.id', 'ads.title', 'ads.description', 'ads.email', 'ads.phone', 'ads.location', 'ads.catid', 'ads.created_at',
+            'categories.title')->join('categories', 'categories.id', "=", 'ads.catid')->paginate(8);
+        return view('skelbimai.pages.skelbimai', compact('ads','categories'));
     }
     public function showApie(){
 
@@ -27,6 +32,9 @@ class HomeController extends Controller
     }
     public function showRegistruotis(){
         return view('skelbimai.pages.registruotis');
+    }
+    public function showSkelbimas(Ad $ad){
+        return view('skelbimai.pages.skelbimas', compact('ad'));
     }
 
 }

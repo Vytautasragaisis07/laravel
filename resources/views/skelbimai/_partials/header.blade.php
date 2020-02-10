@@ -4,6 +4,7 @@
         <a href="/kategorija">Prideti Kategorija</a>
         <a href="/valdyti-kategorija">Valdyti Kategorija</a>
         <a href="/prideti">Prideti skelbima</a>
+        <a href="/valdyti-skelbima">Valdyti skelbima</a>
     </div>
 </div>
 <header class="site-navbar container py-0 " role="banner">

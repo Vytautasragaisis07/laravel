@@ -9,8 +9,8 @@
 
                     <div class="row justify-content-center mt-5">
                         <div class="col-md-8 text-center">
-                            <h1>Prideti kategorija</h1>
-                            <p class="mb-0">Kategoriju meniu</p>
+                            <h1>Prideti skelbimą</h1>
+                            <p class="mb-0">Skelbimų meniu</p>
                         </div>
                     </div>
 
@@ -23,105 +23,69 @@
 
     <div class="site-section bg-light">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-7 mb-5"  data-aos="fade">
-
-                    <h2 class="mb-5 text-black">Pridėti skelbimą</h2>
-
-                    <form action="POST" class="p-5 bg-white">
-
-                        <table class="table">
-                            <thead class="thead-dark">
-                            <tr>
-                                <th scope="col">Kategorijos</th>
-                                <th scope="col">Veiksmai</th>
-                                <th scope="col">Veiksmai</th>
-                                <th scope="col">Veiksmai</th>
-                                <th scope="col">Veiksmai</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($ads as $ad)
-                                <tr>
-                                    <td>{{$ad->title}}</td>
-                                    <td>{{$ad->description}}</td>
-                                    <td>{{$ad->price}}</td>
-                                    <td>{{$ad->img}}</td>
-                                    <td>{{$ad->email}}</td>
-                                    <td>{{$ad->location}}</td>
-                                    <td>{{$ad->phone}}</td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                        <div class="row form-group">
-
-                            <div class="col-md-12">
-                                <label class="text-black" for="email">Pavadinimas</label>
-                                <input type="title" id="title" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <label class="text-black" for="subject">Aprašymas</label>
-                                <textarea type="text" id="description" name="description" rows="3" class="form-control"></textarea>
-                            </div>
-                        </div>
-
-
-                        <div class="row form-group">
-
-                            <div class="col-md-12">
-                                <label class="text-black" for="email">Kaina</label>
-                                <input type="number" id="price" name="price" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="row form-group">
-
-                            <div class="col-md-12">
-                                <label class="text-black" for="email">Pridėti nuotrauką</label>
-                                <input type="img" id="img" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="row form-group">
-
-                            <div class="col-md-12">
-                                <label class="text-black" for="email">El. Paštas</label>
-                                <input type="email" id="email" name="email" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="row form-group">
-
-                            <div class="col-md-12">
-                                <label class="text-black" for="email">Miestas</label>
-                                <input type="text" id="location" name="location" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="row form-group">
-
-                            <div class="col-md-12">
-                                <label class="text-black" for="email">Telefonas</label>
-                                <input type="text" id="phone" name="phone" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <a href="/skelbimai" class="btn btn-danger py-2 px-4 text-white">Prideti</a>
-                            </div>
-                        </div>
-
-
-                    </form>
+            @if($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
                 </div>
+            @endif
+            <form method="POST" action="/store-ad">
+                @csrf
+                <div class="form-group">
+                    <div class="row justify-content-center">
+                        <div class="col-md-7 mb-5"  data-aos="fade">
 
-            </div>
+                            <h2 class="mb-5 text-black">Pridėkite skelbimą</h2>
+
+                            <div class="row form-group">
+
+                                <div class="col-md-12">
+                                    <label class="text-black" for="title">Pavadinimas</label>
+                                    <input type="text" id="title" name="title" class="form-control">
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="text-black" for="description">Aprašymas</label>
+                                    <input type="text" id="description" name="description" class="form-control">
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="text-black" for="price">Kaina</label>
+                                    <input type="text" id="price" name="price" class="form-control">
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="text-black" for="email">El paštas</label>
+                                    <input type="text" id="email" name="email" class="form-control">
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="text-black" for="phone">Telefonas</label>
+                                    <input type="text" id="phone" name="phone" class="form-control">
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="text-black" for="location">Vietovė</label>
+                                    <input type="text" id="location" name="location" class="form-control">
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="text-black" for="catid">Numeris</label>
+                                    <input type="text" id="catid" name="catid" class="form-control">
+                                </div>
+
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn btn-primary py-2 px-4 text-white">Sukurti</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 
 @stop
+
+
