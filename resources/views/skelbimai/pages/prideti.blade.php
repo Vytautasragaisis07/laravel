@@ -46,13 +46,28 @@
                                     <label class="text-black" for="title">Pavadinimas</label>
                                     <input type="text" id="title" name="title" class="form-control">
                                 </div>
+
                                 <div class="col-md-12">
                                     <label class="text-black" for="description">Aprašymas</label>
                                     <input type="text" id="description" name="description" class="form-control">
                                 </div>
+                                <div class="row form-group">
+                                    <div class="col-md-12">
+                                        <label class="text-black" for="title">Kategorija</label>
+                                        @foreach($categories as $category)
+                                            <select class="form-control" name="catid">
+                                                <option value="{{$category->id}}">{{$category->title}}</option>
+                                            </select>
+                                        @endforeach
+                                    </div>
+                                </div>
                                 <div class="col-md-12">
                                     <label class="text-black" for="price">Kaina</label>
                                     <input type="text" id="price" name="price" class="form-control">
+                                </div>
+                                <div class="col-md-12">
+                                        <label class="text-black" for="subject">Pridėti paveikslėlį</label>
+                                        <input type="file" id="img" name="image" class="form-control">
                                 </div>
                                 <div class="col-md-12">
                                     <label class="text-black" for="email">El paštas</label>
@@ -65,10 +80,6 @@
                                 <div class="col-md-12">
                                     <label class="text-black" for="location">Vietovė</label>
                                     <input type="text" id="location" name="location" class="form-control">
-                                </div>
-                                <div class="col-md-12">
-                                    <label class="text-black" for="catid">Numeris</label>
-                                    <input type="text" id="catid" name="catid" class="form-control">
                                 </div>
 
                             </div>

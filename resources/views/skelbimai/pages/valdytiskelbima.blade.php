@@ -25,7 +25,7 @@
         <div class="container">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-6 offset-2">
+                    <div class="col-sm-6 offset-1">
                         <table class="table">
                             <thead class="thead-dark">
                             <tr>
@@ -35,8 +35,8 @@
                                 <th scope="col">El paštas</th>
                                 <th scope="col">Telefonas</th>
                                 <th scope="col">Vietovė</th>
-                                <th scope="col">ID</th>
-                                <th scope="col">Veiksmai</th>
+                                <th scope="col">Radagavimas</th>
+                                <th scope="col">Trinimas</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -48,8 +48,8 @@
                                     <td>{{$ad->email}}</td>
                                     <td>{{$ad->phone}}</td>
                                     <td>{{$ad->location}}</td>
-                                    <td>{{$ad->catid}}</td>
-                                    <td><a href="/trinti-skelbima/{{$ad->id}}">Trinti</a></td>
+                                    <td><a href="/redaguotiSkelbima/ad/{{$ad->id}}" class="btn btn-primary py-2 px-4 text-white btn-success">Redaguoti</a></td>
+                                    <td><a href="/trinti-skelbima/{{$ad->id}}" class="btn btn-primary py-2 px-4 text-white btn-danger">Trinti</a></td>
                                 </tr>
                             @endforeach
                             </tbody>

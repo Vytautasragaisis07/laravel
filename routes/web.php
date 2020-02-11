@@ -18,6 +18,7 @@ Route::get('/kontaktai', 'HomeController@showKontaktai');
 Route::get('/prisijungti', 'HomeController@showPrisijungti');
 Route::get('/registruotis', 'HomeController@showRegistruotis');
 Route::get('/skelbimas/{ad}', 'HomeController@showSkelbimas');
+Route::get('/visiskelbimai', 'HomeController@showSkelbimai');
 
 Route::get('/kategorija', 'CategoryController@AddKategorija');
 Route::post('/store-category', 'CategoryController@StoreKategorija'); //Uzklausa
@@ -28,5 +29,6 @@ Route::get('/prideti', 'AdController@AddSkelbima');
 Route::post('/store-ad', 'AdController@StoreAd'); //Uzklausa
 Route::get('/valdyti-skelbima', 'AdController@ValdytiSkelbima');
 Route::get('/trinti-skelbima/{ad}', 'AdController@TrintiSkelbima');
-
+Route::get('/redaguotiSkelbima/ad/{ad}', 'AdController@RedaguotiSkelbima');
+Route::get('/redaguoti_skelbima/{ad}', 'AdController@Redaguoti_skelbima'); //Uzklausa
 
