@@ -9,17 +9,17 @@ use Illuminate\Http\Request;
 class AdController extends Controller
 {
     public function AddSkelbima(){
+        $categories = Category::all();
 
-        return view('skelbimai.pages.prideti');
+        return view('skelbimai.pages.prideti', compact('categories'));
     }
-    public function StoreAd(Request $request)
+    public function storeAd(Request $request )
     {
         $validateData = $request->validate([
             'title' => 'required',
             'description' => 'required',
             'price' => 'required',
             'email' => 'required',
-            'phone' => 'required',
             'location' => 'required'
         ]);
         $ad = Ad::create([
@@ -28,7 +28,8 @@ class AdController extends Controller
             'price' => request('price'),
             'email' => request('email'),
             'phone' => request('phone'),
-            'location' => request('location')
+            'location' => request('location'),
+            'catid' => auth()->id()
         ]);
 
         return redirect('/valdyti-skelbima');
