@@ -37,7 +37,7 @@
                             @foreach($categories as $category)
                                 <tr>
                                     <td>{{$category->title}}</td>
-                                    <td><a href="/trinti-kategorija/{{$category->id}}">Trinti</a></td>
+                                    <td><a href="/trinti-kategorija/{{$category->id}}" class="btn btn-primary py-2 px-4 text-white btn-danger center">Trinti</a></td>
                                 </tr>
                             @endforeach
                             </tbody>

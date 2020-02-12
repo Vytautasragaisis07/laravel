@@ -31,4 +31,4 @@ Route::get('/valdyti-skelbima', 'AdController@ValdytiSkelbima');
 Route::get('/trinti-skelbima/{ad}', 'AdController@TrintiSkelbima');
 Route::get('/redaguotiSkelbima/ad/{ad}', 'AdController@RedaguotiSkelbima');
 Route::get('/redaguoti_skelbima/{ad}', 'AdController@Redaguoti_skelbima'); //Uzklausa
-
+Route::get('/search-action', 'AdController@paieska');

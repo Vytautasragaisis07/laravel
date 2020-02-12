@@ -25,6 +25,7 @@ class CreateAdsTable extends Migration
             $table->integer('catid');
             $table->timestamps();
         });
+
     }
     /**
      * Reverse the migrations.

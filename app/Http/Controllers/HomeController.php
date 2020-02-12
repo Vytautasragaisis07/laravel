@@ -10,13 +10,17 @@ class HomeController extends Controller
 {
     public function index(){
 
-        return view('skelbimai.pages.home');
+        $categories = Category::all();
+        $ads = Ad::select('ads.id', 'ads.title', 'ads.description','ads.price', 'ads.email','ads.phone',
+            'ads.location','ads.catid','categories.title as pavadinimas')->join('categories','categories.id',"=",'ads.catid')->get();
+        return view('skelbimai.pages.home', compact('ads','categories'));
     }
+
     public function showSkelbimai()
     {
         $categories = Category::all();
         $ads = Ad::select('ads.id', 'ads.title', 'ads.description','ads.price', 'ads.email','ads.phone',
-            'ads.location','ads.catid','categories.title as pavadinimas')->join('categories','categories.id',"=",'ads.catid')->paginate(2);
+            'ads.location','ads.catid','categories.title as pavadinimas')->join('categories','categories.id',"=",'ads.catid')->paginate(8);
         return view('skelbimai.pages.visiskelbimai', compact('ads','categories'));
     }
     public function showApie(){

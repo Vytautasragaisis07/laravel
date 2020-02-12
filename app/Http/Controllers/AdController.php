@@ -12,16 +12,23 @@ class AdController extends Controller
         $categories = Category::all();
 
         return view('skelbimai.pages.prideti', compact('categories'));
+
     }
-    public function storeAd(Request $request )
+    public function StoreAd(Request $request )
     {
+
         $validateData = $request->validate([
             'title' => 'required',
             'description' => 'required',
             'price' => 'required',
             'email' => 'required',
-            'location' => 'required'
+            'location' => 'required',
+            //'img' => 'mimes:jpeg,jpg,png,gif|required|max:10000'
+
         ]);
+        //$path=$request->file('img')->store('public/images');
+        //$filename=str_replace('public/',"", $path);
+
         $ad = Ad::create([
             'title' => request('title'),
             'description' => request('description'),
@@ -29,11 +36,12 @@ class AdController extends Controller
             'email' => request('email'),
             'phone' => request('phone'),
             'location' => request('location'),
-            'catid' => auth()->id()
+            'catid' => request ('catid')
+
+
         ]);
 
         return redirect('/valdyti-skelbima');
-
     }
     public function ValdytiSkelbima()
     {
@@ -76,5 +84,14 @@ class AdController extends Controller
 
         return redirect('/valdyti-skelbima');
 
+    }
+    public function paieska(Request $request){
+
+        $categories = Category::all();
+        $ads = Ad::where('title', 'LIKE', '%'.request('titleForSearch').'%')->
+        where('location', 'LIKE', '%'.request('locationForSearch').'%')->
+        where('catid', 'LIKE', '%'.request('categoryID').'%')->get();
+
+        return view ('skelbimai.pages.paieska', compact('ads','categories'));
     }
 }
