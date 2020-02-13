@@ -35,5 +35,7 @@ Route::get('/search-action', 'AdController@Paieska');
 
 Auth::routes();
 
-Route::get('/valdyti-skelbima', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/logout', 'HomeController@logout');
+
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Ad;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -34,11 +35,16 @@ class HomeController extends Controller
     public function showPrisijungti(){
         return view('skelbimai.pages.prisijungti');
     }
-    public function showRegistruotis(){
+    public function register(){
+        
         return view('skelbimai.pages.registruotis');
     }
     public function showSkelbimas(Ad $ad){
         return view('skelbimai.pages.skelbimas', compact('ad'));
+    }
+    public function logout() {
+        Auth::logout();
+        return view('skelbimai.pages.skelbimai');
     }
 
 }

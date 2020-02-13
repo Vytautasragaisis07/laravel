@@ -27,7 +27,6 @@
         <div class="site-mobile-menu-body"></div>
     </div>
 
-
     @include('skelbimai/_partials/header')
     @yield('content')
     @include('skelbimai/_partials/newletter')

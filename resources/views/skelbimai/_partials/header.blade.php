@@ -1,12 +1,4 @@
-<!-- admin meniu -->
-<div class="row">
-    <div class="col-md-8">
-        <a href="/kategorija">Prideti Kategorija</a>
-        <a href="/valdyti-kategorija">Valdyti Kategorija</a>
-        <a href="/prideti">Prideti skelbima</a>
-        <a href="/valdyti-skelbima">Valdyti skelbima</a>
-    </div>
-</div>
+
 <header class="site-navbar container py-0 " role="banner">
 
 
@@ -30,9 +22,10 @@
                     </li>
                     <li class="mr-5"><a href="/kontaktai">Kontaktai</a></li>
 
-                    <li class="ml-xl-3 login"><a href="/prisijungti"><span class="border-left pl-xl-4"></span>Prisijungti</a></li>
+                    <li class="ml-xl-3 login"><a href="/login"><span class="border-left pl-xl-4"></span>Prisijungti</a></li>
 
-                    <li><a href="/registruotis" class="cta"><span class="bg-primary text-white rounded">Registruotis</span></a></li>
+                    <li><a href="/register" class="cta"><span class="bg-primary text-white rounded">Registruotis</span></a></li>
+
                 </ul>
             </nav>
         </div>
