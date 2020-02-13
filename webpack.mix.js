@@ -12,8 +12,8 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/scss/style.scss', 'public/css')
-    .sass('resources/scss/bootstrap/bootstrap.scss', 'public/css/bootstrap');
+    .sass('resources/sass/style.scss', 'public/css')
+    .sass('resources/sass/bootstrap/bootstrap.scss', 'public/css/bootstrap');
 mix.combine([
     'public/fonts/icomoon/style.css',
     'public/css/vendor/bootstrap.min.css',

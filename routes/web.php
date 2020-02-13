@@ -30,5 +30,10 @@ Route::post('/store-ad', 'AdController@StoreAd'); //Uzklausa
 Route::get('/valdyti-skelbima', 'AdController@ValdytiSkelbima');
 Route::get('/trinti-skelbima/{ad}', 'AdController@TrintiSkelbima');
 Route::get('/redaguotiSkelbima/ad/{ad}', 'AdController@RedaguotiSkelbima');
-Route::get('/redaguoti_skelbima/{ad}', 'AdController@Redaguoti_skelbima'); //Uzklausa
-Route::get('/search-action', 'AdController@paieska');
+Route::post('/redaguoti_skelbima/{ad}', 'AdController@Redaguoti_skelbima'); //Uzklausa
+Route::get('/search-action', 'AdController@Paieska');
+
+Auth::routes();
+
+Route::get('/valdyti-skelbima', 'HomeController@index')->name('home');
+

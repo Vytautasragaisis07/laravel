@@ -34,7 +34,7 @@
                 </ul>
             </div>
         @endif
-        <form method="get" action="/redaguoti_skelbima/{{$ad->id}}" class="p-5 bg-white">
+        <form method="POST" enctype="multipart/form-data" action="/redaguoti_skelbima/{{$ad->id}}" class="p-5 bg-white">
             @csrf
             <div class="row justify-content-center">
                 <div class="col-md-7 mb-5"  data-aos="fade">
@@ -50,15 +50,17 @@
                     </div>
 
                     <div class="row form-group">
+
                         <div class="col-md-12">
                             <label class="text-black" for="title">Kategorija</label>
-                            @foreach($categories as $category)
-                                <select class="form-control" name="catid">
+                            <select class="form-control" name="catid">
+                                @foreach($categories as $category)
                                     <option value="{{$category->id}}">{{$category->title}}</option>
-                                </select>
-                            @endforeach
+                                @endforeach
+                            </select>
 
                         </div>
+
                     </div>
 
 
@@ -80,7 +82,8 @@
                     <div class="row form-group">
                         <div class="col-md-12">
                             <label class="text-black" for="subject">Pridėti paveikslėlį</label>
-                            <input type="file" id="img" name="image" class="form-control">
+                            <div><img src="({{'storage/'.$ad->img}})" for="subject" alt="image" class="img-fluid rounded"> </div>
+                            <input type="file" id="img" name="img" class="form-control">
                         </div>
                     </div>
 

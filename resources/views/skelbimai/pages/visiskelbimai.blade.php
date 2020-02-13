@@ -33,11 +33,10 @@
                 @foreach($ads as $ad)
                     <div class="col-lg-6">
                         <div class="d-block d-md-flex listing">
-                            <a href="/skelbimas/{{$ad->id}}" class="img d-block" style="background-image: url('images/img_1.jpg')"></a>
                             <div class="lh-content">
 
                                 <span class="category">{{$ad->pavadinimas}}</span>
-
+                                <div><img src="({{'storage/'.$ad->img}})" for="subject" alt="image" class="img-fluid rounded"> </div>
                                 <a href="#" class="bookmark"><span class="icon-heart"></span></a>
                                 <h3><a href="/skelbimas">{{$ad->title}}</a></h3>
 
@@ -56,7 +55,6 @@
                     </div>
                 @endforeach
             </div>
-
 
             <div class="col-12 mt-5 text-center">
                 <div class="custom-pagination">
