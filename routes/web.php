@@ -36,7 +36,7 @@ Route::get('/search-action', 'AdController@Paieska');
 Route::get('/redaguoti', 'AdController@RedaguotiSkelbima');
 Route::get('/trinti', 'AdController@TrintiSkelbima');
 
-Route::get('/komentaras/{ad}', 'CommentController@showComment');
+Route::get('/komentaroForma/{ad}', 'CommentController@showComment');
 Route::get('/komentaras/{ad}', 'CommentController@addComment');
 
 Auth::routes();

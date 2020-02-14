@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
 use App\Comment;
-use App\Ad;
+use App\ad;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
-    public function showComment(Comment $comment){
-        return view('skelbimai.pages.komentaras', compact('comment'));
+    public function showComment(Ad $ad){
+        return view('skelbimai.pages.komentaroForma', compact('ad'));
     }
     public function addComment(Ad $ad){
         Comment::create([
@@ -20,6 +19,6 @@ class CommentController extends Controller
             'user_id' => Auth()->id()
 
         ]);
-        return back();
+        return redirect('skelbimas/'.$ad->id);
     }
 }

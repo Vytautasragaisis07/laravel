@@ -39,7 +39,23 @@
             <p>{{$ad->description}}</p>
             <p>{{$ad->price}}</p>
             <p>{{$ad->email}}</p>
-            <a href="/komentaras" class="cta"><span class="btn btn-primary py-2 px-4 text-white">Komentuoti</span></a>
+            <a href="/komentaroForma/{{$ad->id}}" class="cta"><span class="btn btn-primary py-2 px-4 text-white">Komentuoti</span></a>
+            <div class="col-md-12">
+                <hr>
+                @if(count($ad->comments))
+                <div class="comments">
+                    <h4>Komentarai</h4>
+
+                    <ul class="list-group">
+                        @foreach($ad->comments as $comment)
+                            <li class="list-group-item"> <strong>{{$comment->created_at}}</strong></li>
+                            <li class="list-group-item"> <strong>{{$comment->name}}</strong></li>
+                            <li class="list-group-item"> <strong>{{$comment->comment}}</strong></li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
+            </div>
         </div>
     </div>
 

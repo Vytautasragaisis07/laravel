@@ -24,6 +24,16 @@
     <div class="site-section bg-light">
         <div class="container">
 
+            @if($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li>{{$error}}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
             <form method="GET" action="/komentaras/{{$ad->id}}" enctype="multipart/form-data">
                 @csrf
                 <div class="row justify-content-center">
@@ -42,8 +52,8 @@
 
                         <div class="row form-group">
                             <div class="col-md-12">
-                                <label class="text-area" for="subject">Aprašymas</label>
-                                <textarea class="form-control" id="description" name="description" rows="4"></textarea>
+                                <label class="text-area" for="subject">Komentaras</label>
+                                <textarea class="form-control" id="comment" name="comment" rows="4"></textarea>
                             </div>
                         </div>
 
