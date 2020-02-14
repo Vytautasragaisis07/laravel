@@ -33,6 +33,12 @@ Route::get('/redaguotiSkelbima/ad/{ad}', 'AdController@RedaguotiSkelbima');
 Route::post('/redaguoti_skelbima/{ad}', 'AdController@Redaguoti_skelbima'); //Uzklausa
 Route::get('/search-action', 'AdController@Paieska');
 
+Route::get('/redaguoti', 'AdController@RedaguotiSkelbima');
+Route::get('/trinti', 'AdController@TrintiSkelbima');
+
+Route::get('/komentaras/{ad}', 'CommentController@showComment');
+Route::get('/komentaras/{ad}', 'CommentController@addComment');
+
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');

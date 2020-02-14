@@ -1,6 +1,7 @@
 
 @extends('skelbimai/main')
 @section('content')
+    @include('skelbimai/_partials/admin')
     <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(/images/hero_3.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
             <div class="row align-items-center justify-content-center text-center">
@@ -34,11 +35,14 @@
                     </div>
                 </div>
             </div>
+            <h4 class="h5 mb-4 text-black">Description</h4>
+            <p>{{$ad->description}}</p>
+            <p>{{$ad->price}}</p>
+            <p>{{$ad->email}}</p>
+            <a href="/komentaras" class="cta"><span class="btn btn-primary py-2 px-4 text-white">Komentuoti</span></a>
         </div>
     </div>
 
-    <h4 class="h5 mb-4 text-black">Description</h4>
-    <p>{{$ad->description}}</p>
-    <p>{{$ad->price}}</p>
-    <p>{{$ad->email}}</p>
+
+
 @stop

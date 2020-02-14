@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Ad;
 use App\Category;
 use File;
+use Gate;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class AdController extends Controller
@@ -39,7 +41,8 @@ class AdController extends Controller
             'phone' => request('phone'),
             'location' => request('location'),
             'catid' => request ('catid'),
-            'img' => $filename
+            'img' => $filename,
+            'userid' => Auth::id(),
 
         ]);
 
@@ -51,13 +54,21 @@ class AdController extends Controller
         $categories = Category::all();
         return view('skelbimai.pages.valdytiskelbima', compact('ads'));
     }
-    public function TrintiSkelbima(Ad $ad)
-    {
+    public function TrintiSkelbima(Ad $ad){
+
+        if(Gate::allows('TrintiSkelbima', $ad)) {
+
+            return view('skelbimai.pages.klaida');
+        }
         $ad -> delete();
         return redirect('/valdyti-skelbima');
     }
     public function RedaguotiSkelbima(Ad $ad){
 
+        if(Gate::allows('RedaguotiSkelbima', $ad)){
+
+            return view('skelbimai.pages.klaida', compact('ad'));
+        }
         $categories = Category::all();
         return view ('skelbimai.pages.redaguotiskelbima', compact('ad','categories'));
 
@@ -87,6 +98,7 @@ class AdController extends Controller
         return redirect('/valdyti-skelbima');
 
     }
+
 
     public function Paieska(Request $request){
 
