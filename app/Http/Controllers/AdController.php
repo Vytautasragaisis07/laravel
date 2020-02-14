@@ -84,12 +84,19 @@ class AdController extends Controller
             'location' => 'required',
             'img' => 'mimes:jpeg,jpg,png,gif|max:10000'
         ]);
-        Ad::where('id',$ad->id)->update($request->only(['title','description','price','email','phone','location','img']));
+        Ad::where('id',$ad->id)->update(['title' => request('title'),
+            'description' => request('description'),
+            'price' => request('price'),
+            'email' => request('email'),
+            'phone' => request('phone'),
+            'location' => request('location'),
+            'img' => request('img')
+            ]);
 
         if($request->hasFile('img'))
         {
             File::delete('storage/'.$ad->img);
-            $path=$request->file('img')->store('public/logos');
+            $path=$request->file('img')->store('/public/logos');
             $filename=str_replace('public/',"",$path);
             Ad::where('id',$ad->id)->update([
                 'img'=>$filename

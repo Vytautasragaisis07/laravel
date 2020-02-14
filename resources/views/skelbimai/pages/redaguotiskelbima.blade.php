@@ -81,7 +81,7 @@
                     <div class="row form-group">
                         <div class="col-md-12">
                             <label class="text-black" for="subject">Pridėti paveikslėlį</label>
-                            <div><img src="({{'storage/'.$ad->img}})" for="subject" alt="image" class="img-fluid rounded"> </div>
+                            <div><img src="({{'/storage/'.$ad->img}})" for="subject" alt="image" class="img-fluid rounded"> </div>
                             <input type="file" id="img" name="img" class="form-control">
                         </div>
                     </div>

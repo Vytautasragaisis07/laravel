@@ -15,7 +15,7 @@ class CommentsTable extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('post_id');
+            $table->integer('ad_id');
             $table->integer('user_id');
             $table->string('name');
             $table->text('comment');
