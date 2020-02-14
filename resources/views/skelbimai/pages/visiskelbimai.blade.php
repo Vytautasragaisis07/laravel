@@ -36,7 +36,8 @@
                             <div class="lh-content">
 
                                 <span class="category">{{$ad->pavadinimas}}</span>
-                                <a href="/skelbimas/{{$ad->id}}" class="img d-block" style="background-image: url({{'storage/'.$ad->img}})"></a>
+                                <a href="/skelbimas/{{$ad->id}}" class="img d-block" style="background-image: url{{'/storage/'.$ad->img}}"></a>
+                                <div><img src="{{'/storage/'.$ad->img}}" class="img-fluid rounded"></div>
                                 <a href="#" class="bookmark"><span class="icon-heart"></span></a>
                                 <h3><a href="/skelbimas/{{$ad->id}}">{{$ad->title}}</a></h3>
 
