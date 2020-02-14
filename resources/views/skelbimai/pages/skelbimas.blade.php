@@ -48,9 +48,8 @@
 
                     <ul class="list-group">
                         @foreach($ad->comments as $comment)
-                            <li class="list-group-item"> <strong>{{$comment->created_at}}</strong></li>
-                            <li class="list-group-item"> <strong>{{$comment->name}}</strong></li>
-                            <li class="list-group-item"> <strong>{{$comment->comment}}</strong></li>
+                            <li class="list-group-item">{{$comment->created_at}} <strong>{{$comment->name}}</strong></li>
+                            <li class="list-group-item">{{$comment->comment}}</li>
                         @endforeach
                     </ul>
                 </div>
